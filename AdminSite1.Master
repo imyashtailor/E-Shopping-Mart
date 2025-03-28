@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSite1.master.cs" Inherits="E_shopping_Website.AdminSite1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>EShopping</title>
+    <meta charset =" utf-8" />
+    <meta name ="viewport" content ="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content ="IE-edge" />
+    <link href="css/Styling.css" rel="stylesheet" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- ContentPlaceHolder for head -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-----Navbar Start---->
+            <div class ="navbar navbar-default navbar-fixed-top" role ="navigation">
+                <div class ="container">
+                    <div class ="navbar-header">
+                        <button type ="button" class ="navbar-toggle" data-toggle ="collapse" data-target=".navbar-collapse">
+                            <span class ="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class ="navbar-brand" href ="Default.aspx"><span><img src="Images/e-shopping images.png" alt ="E-shopping" height ="30"/></span>E-Shopping Mart</a>
+                    </div>   
+                    <div class="navbar-collapse collapse navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class=""><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="AdminDashboard.aspx">Dashboard</a></li>
+                           
+                            <!-----Dropdownlist menu---->
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"data-toggle="dropdown">Products<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li><a href="AddProduct.aspx">Add Product</a></li>
+                                     
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"data-toggle="dropdown">Manage<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AddBrand.aspx">Add Brand</a></li>
+                                    <li><a href="AddCategory.aspx">Add Category</a></li>
+                                    <li><a href="SubCategory.aspx">Add SubCategory</a></li>
+                                    <li><a href="AddGender.aspx">Add Gender</a></li>
+                                    <li><a href="AddSize.aspx">Add Size</a></li>
+                                </ul>
+                            </li>
+
+
+
+
+
+                            <li>
+                                <asp:Button ID="btnAdminLogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Signout" OnClick="btnAdminlogout" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-----Navbar End---->
+            <div class="container">  
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+          </div>
+           
+        </div>
+    </form>
+    <%--<!-----Footer content start---->
+        <footer class="footer-pos">
+            <div class="container">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>&copy;2025 EShopping.in &middot; <a href="Default.aspx">Home</a>&middot;<a href="#">About</a>&middot;<a href="#">Contact</a>&middot; <a href="#">Products</a> </p>
+            </div>
+            </footer>
+        <!-----Footer Content end---->--%>
+  </body>
+</html>

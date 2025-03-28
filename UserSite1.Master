@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserSite1.master.cs" Inherits="E_shopping_Website.UserSite1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Welcome User</title>
+     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <meta charset =" utf-8" />
+    <meta name ="viewport" content ="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content ="IE-edge" />
+    <link href="css/Styling.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+        $(document).ready(function myfunction() {
+            $("#btnCart").Click(function myfunction() {
+                window.location.href = "/AddCart.aspx";
+            });
+        });
+
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-----Navbar Start---->
+            <div class ="navbar navbar-default navbar-fixed-top" role ="navigation">
+                <div class ="container">
+                    <div class ="navbar-header">
+                        <button type ="button" class ="navbar-toggle" data-toggle ="collapse" data-target=".navbar-collapse">
+                            <span class ="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class ="navbar-brand" href ="Default.aspx"><span><img src="Images/e-shopping images.png" alt ="E-shopping" height ="30"/></span>E-Shopping Mart</a>
+                    </div>   
+                    <div class="navbar-collapse collapse navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class=""><a href="Default.aspx">Home</a></li>
+                            <li><a href="About.aspx">About</a></li>
+                            <li><a href="ContactUs.aspx">Contact Us</a></li>
+                            <li><a href="Blog.aspx">Blog</a></li>
+                            <li><a href="Dashboard.aspx">Dashboard</a></li>
+
+                           
+                            <!-----Dropdownlist menu---->
+
+                            <li class="drodown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b
+                            class="caret"></b></a>
+                            <ul class="dropdown-menu ">
+                                <li><a href="Products.aspx">All Products</a></li>
+                                <li role="separator" class="divider "></li>
+                                <li class="dropdown-header ">Men</li>
+                                <li role="separator" class="divider "></li>
+                                <li><a href="#">Shirts</a></li>
+                                <li><a href="#">Pants</a></li>
+                                <li><a href="#">Denims</a></li>
+                                <li role="separator" class="divider "></li>
+                                <li class="dropdown-header ">Women</li>
+                                <li role="separator" class="divider "></li>
+                                <li><a href="#">Top</a></li>
+                                <li><a href="#">Leggings</a></li>
+                                <li><a href="#">Saree</a></li>
+                            </ul>
+                        </li>
+                                     <li class="nav-item">
+                                        <a class="nav-link" href="AddCart.aspx" id="btnCart">
+                                        <i class="fa-solid fa-cart-shopping"></i> Cart
+                                        <span class="badge badge-danger" id="pCount" runat="server">0</span>
+                                    </a>
+                                </li>
+
+                            <li>
+                                <asp:Button ID="btnLogin" CssClass="btn btn-default navbar-btn" OnClick="btnLogin_Click" runat="server" Text="SignIn" />
+                                <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Signout" OnClick="btnlogout_Click" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-----Navbar End---->
+            <div class="container"> 
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+           
+        </div>
+    </form>
+     <!---Footer COntents Start here---->
+        <hr />
+        <footer>
+            <div class ="container ">
+                <p class ="pull-right "><a href ="#">Back to top</a></p>
+                <p>&copy;2025 EShopping.in &middot; <a href ="Default.aspx">Home</a>&middot;<a href ="#">About</a>&middot;<a href ="#">Contact</a>&middot;<a href ="#">Products</a> </p>
+            </div>
+
+        </footer>
+
+         <!---Footer COntents End---->
+</body>
+</html>
